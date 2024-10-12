@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HEART</title>
+    <!-- Link to Google Fonts and CSS Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-and-content">
+            <img src="Heart Logo.png" alt="Heart Logo">
+            <div class="header-content">
+                <h3>PROJECT</h3>
+                <div class="header-title">
+                    <h1>HEART</h1>
+                    <h5>HEALTH EVALUATION AND <br>ASSESSMENT ROBOT</h5>
+                </div>
+            </div>
+        </div>
+        <div class="notifications">🔔
+            <span class="notification-count" id="notification-count">3</span>
+        </div>
+        <div class="profile">
+            <img src="profile.png" alt="profile">
+        </div>
+    </nav>
+
+    <!-- Sidebar and Main Content -->
+    <div class="dashboard-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#" id="robot-status-sidebar">Robot Status</a></li>
+                <li><a href="#" id="patients-sidebar">Patients</a></li>
+                <li><a href="#" id="ai-insights-sidebar">AI Insights</a></li>
+                <li><a href="#" id="setting-sidebar">Settings</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Real-Time Monitoring Panel -->
+            <section class="monitoring-panel" id="robot-status-section">
+                <!-- Updated Robot Status Section -->
+                <div class="robot-status">
+                    <h3>Robot Status</h3>
+                    <div class="status-details">
+                        <p><strong>Status:</strong> <span id="robot-status-text">Active</span></p>
+                        <p><strong>Current Task:</strong> Checking on Patient 1</p>
+                        <p><strong>Battery Level:</strong> 75% (Charging)</p>
+                        <p><strong>Tasks Completed Today:</strong> 5/10</p>
+                        <p><strong>Location:</strong> Patient Room 3</p>
+                        <p><strong>Next Task:</strong> Check on Patient 2 in 5 minutes</p>
+                    </div>
+                </div>
+                <!-- Patient Health Overview -->
+                <div class="patient-health">
+                    <h3>Patient Health Overview</h3>
+                    <div class="patient-grid">
+                        <div class="patient-card">
+                            <h4>Patient 1</h4>
+                            <p>Pulse: 72 bpm</p>
+                            <p>Temperature: 98.6°F</p>
+                            <p>Status: Normal</p>
+                        </div>
+                        <div class="patient-card critical">
+                            <h4>Patient 2</h4>
+                            <p>Pulse: 120 bpm</p>
+                            <p>Temperature: 101°F</p>
+                            <p>Status: Critical</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patient Data Section (Initially Hidden) -->
+            <section id="patient-data-section" class="patients-panel" style="display: none;">
+                <h3>Patient Data Management</h3>
+
+                <!-- Patient Details Section as a Table -->
+                <div class="patient-details">
+                    <h4>Patient Details</h4>
+                    <table border="1" cellspacing="0" cellpadding="10">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Pulse</th>
+                            <th>Blood Pressure</th>
+                            <th>Temperature</th>
+                            <th>Status</th>
+                            <th>date</th>
+                            <th>More</th>
+                        </tr>
+                    </table>
+                </div>
+    
+            </section>
+
+            <!-- AI Insights Section (Initially Hidden) -->
+            <section id="ai-insights-section" class="ai-insights-panel" style="display: none;">
+                <h3>AI Insights</h3>
+                <div class="ai-insight-card">
+                    <h4>Predicted Patient Risk</h4>
+                    <p><strong>Patient 1:</strong> 25% risk of high blood pressure in the next 24 hours.</p>
+                    <p><strong>Patient 2:</strong> 10% risk of elevated temperature in the next 12 hours.</p>
+                </div>
+
+                <div class="ai-insight-card">
+                    <h4>AI Confidence Levels</h4>
+                    <p><strong>Patient 1 Stability:</strong> 90%</p>
+                    <p><strong>Patient 2 Elevated Risk:</strong> 65%</p>
+                </div>
+
+                <div class="ai-insight-card">
+                    <h4>AI Recommendation</h4>
+                    <p>The AI recommends monitoring Patient 2 closely due to increased pulse rate and high temperature.</p>
+                </div>
+
+                <div class="ai-insight-card">
+                    <h4>AI Task Efficiency</h4>
+                    <p>Completed Tasks: 7/10</p>
+                    <p>Pending Alerts: 2</p>
+                </div>
+
+                <div class="ai-insight-card">
+                    <h4>Patient Vitals Trend</h4>
+                    <canvas id="aiVitalsChart"></canvas>
+                </div>
+            </section>
+            <!-- Settings Section -->
+<section id="settings-section" style="display: none;">
+    <h3>Settings</h3>
+    
+    <!-- Robot Settings -->
+    <div class="settings-category">
+        <h4>Robot Configuration</h4>
+        <label for="task-frequency">Task Frequency:</label>
+        <select id="task-frequency">
+            <option value="15">Every 15 minutes</option>
+            <option value="30">Every 30 minutes</option>
+            <option value="60">Every hour</option>
+        </select>
+        <br/>
+        
+        <label for="low-battery-threshold">Low Battery Alert Threshold:</label>
+        <input type="number" id="low-battery-threshold" min="10" max="50" value="20"> %
+    </div>
+
+    <!-- AI Insights Settings -->
+    <div class="settings-category">
+        <h4>AI Insights</h4>
+        <label for="ai-update-frequency">Prediction Update Frequency:</label>
+        <select id="ai-update-frequency">
+            <option value="1">Every hour</option>
+            <option value="6">Every 6 hours</option>
+            <option value="24">Every 24 hours</option>
+        </select>
+        <br/>
+        
+        <label for="ai-confidence-threshold">AI Confidence Threshold:</label>
+        <input type="number" id="ai-confidence-threshold" min="50" max="100" value="75"> %
+    </div>
+
+    <!-- Patient Monitoring Settings -->
+    <div class="settings-category">
+        <h4>Patient Monitoring</h4>
+        <label for="pulse-threshold">Alert if Pulse Above:</label>
+        <input type="number" id="pulse-threshold" min="50" max="150" value="100"> bpm
+        <br/>
+        
+        <label for="temperature-threshold">Alert if Temperature Above:</label>
+        <input type="number" id="temperature-threshold" min="97" max="105" value="100"> °F
+    </div>
+
+    <!-- Save Button -->
+    <button id="save-settings">Save Settings</button>
+</section>
+
+
+            <!-- Analytics and Data Visualization Section -->
+            <section class="analytics-panel" style="display: none;">
+                <h3>Patient Vitals Trends</h3>
+                <canvas id="vitalsChart"></canvas>
+            </section>
+            
+        </main>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="scripts.js"></script>
+    <script src="pAtentt.js"></script>
+</body>
+</html>

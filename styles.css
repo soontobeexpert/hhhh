@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+}
+.logo-and-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+body img {
+    width: 40px;
+    height: auto;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body h3 {
+    color: #333;
+    margin: 0;
+}
+
+body h1 {
+    color: #a81f18;
+    margin: 0;
+}
+
+body h5 {
+    color: #a81f18;
+    margin: 0;
+    font-weight: bolder;
+}
+.navbar {
+    background-color: #c7d2bd;
+    color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.nav-links a {
+    color: #333;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.notifications {
+    font-size: 18px;
+    margin-right: 15px;
+
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+.sidebar {
+    background-color: #d3d7cb;
+    width: 200px;
+    padding: 20px;
+    color: #7a7a7a;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    color: #333;
+    font-weight: bolder;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #444;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.monitoring-panel, .analytics-panel {
+    margin-bottom: 30px;
+}
+
+.robot-status, .patient-health {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.patient-grid {
+    display: flex;
+    gap: 15px;
+}
+
+.patient-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 150px;
+}
+
+.patient-card.critical {
+    background-color: #ffccd5;
+}
+
+#vitalsChart {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+/* Robot Status Styling */
+.robot-status {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.robot-status h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.status-details p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.status-details span {
+    font-weight: bold;
+    color: #007bff; /* Blue for emphasis */
+}
+/* Patient Data Section Styling */
+.patients-panel {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.patients-panel h3, .patients-panel h4 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.patient-list {
+    margin-bottom: 20px;
+}
+
+.patient-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.patient-list ul li {
+    margin-bottom: 10px;
+}
+
+.patient-list ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+.patient-list ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Patient Details Styling */
+.patient-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.patient-details h4 {
+    grid-column: span 2; /* Make header span both columns */
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.patient-details p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.patient-details strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.patient-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patient-details th, .patient-details td {
+    padding: 10px;
+    text-align: left;
+}
+
+.patient-details th {
+    background-color: #f2f2f2;
+}
+
+.patient-details td {
+    background-color: #fff;
+}
+
+.patient-details table, .patient-details th, .patient-details td {
+    border: 1px solid #ddd;
+}
+
+/* General Styles for AI Insights */
+.ai-insights-panel {
+    margin-top: 20px;
+}
+
+.ai-insight-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.ai-insight-card h4 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.ai-insight-card p {
+    margin: 10px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.patient-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.patient-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.patient-card h4 {
+    margin-bottom: 10px;
+}
+
+.patient-card.critical {
+    border: 2px solid red; /* Highlight critical patients */
+}
+/* General Styles for the Settings Section */
+#settings-section {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.settings-category {
+    margin-bottom: 30px;
+}
+
+.settings-category h4 {
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Styling for form labels */
+.settings-category label {
+    font-size: 1em;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Input fields and select dropdowns */
+.settings-category input[type="number"],
+.settings-category select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+/* Hover and focus effects for inputs */
+.settings-category input[type="number"]:focus,
+.settings-category select:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+/* Save button styling */
+#save-settings {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#save-settings:hover {
+    background-color: #357ABD;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    #settings-section {
+        padding: 15px;
+    }
+    
+    .settings-category h4 {
+        font-size: 1.1em;
+    }
+    
+    .settings-category input[type="number"],
+    .settings-category select {
+        padding: 8px;
+        font-size: 0.95em;
+    }
+    
+    #save-settings {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+}
+/* Styling the notification bell */
+.notifications {
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Notification count badge */
+.notification-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: none; /* Initially hidden */
+}
+
+/* Hover effect */
+.notifications:hover {
+    color: #4a90e2;
+}
